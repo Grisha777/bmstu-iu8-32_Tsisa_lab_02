@@ -1,0 +1,3 @@
+C:/Users/-/source/CLion_Projects/Tsisa_lab02/cmake-build-debug/CMakeFiles/Tsisa_lab02.dir
+C:/Users/-/source/CLion_Projects/Tsisa_lab02/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/-/source/CLion_Projects/Tsisa_lab02/cmake-build-debug/CMakeFiles/rebuild_cache.dir
