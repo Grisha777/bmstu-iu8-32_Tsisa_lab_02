@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 
+
 using namespace std;
 const double Right_limit = 1.5;
 const double Left_limit=-2.5;
@@ -88,6 +89,7 @@ void random_search(double function(double x), int Left_limit, int Right_limit)
     cout << "Extremum search results Function depending on P and q" << endl;
     Print(result);
 }
+
 int main()
 {
     cout<<"Variant 9"<<endl<<"Function: f(x)=-0.5*cos(0.5*x)+1"<<string(3,' ')<< "interval: [-2.5,1.5]"<<endl<<endl;
