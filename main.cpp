@@ -1,10 +1,10 @@
+// Copyright Grisha777
 #include <iostream>
 #include "cmake-build-debug/TextTable.h"
 #include <cmath>
 #include <vector>
 #include <string>
 #include <algorithm>
-
 
 using namespace std;
 const double Right_limit = 1.5;
@@ -14,17 +14,17 @@ double Function(double x)
 {
     return -0.5*cos(0.5*x)+1;
 }
-double Function1(double x)
+double Function_Multi(double x)
 {
     return Function(x)*sin(5*x);
 }
 double Probability(double P, double q)
 {
-    double numerator = log(1 - P);
-    double denominator = log(1 - q);
-    return (numerator / denominator);
+    double numerator_of_fraction = log(1 - P);
+    double denominator_of_fraction = log(1 - q);
+    return (numerator_of_fraction / denominator_of_fraction);
 }
-double Function2(double function(double x), double N, int Left_limit, int Right_limit)
+double Function_1(double function(double x), double N, int Left_limit, int Right_limit)
 {
     double delta = (Right_limit - Left_limit) / N;
     double min = Left_limit + delta;
@@ -36,7 +36,7 @@ double Function2(double function(double x), double N, int Left_limit, int Right_
             continue;
         }
         else
-            {
+        {
             min = max;
         }
     }
@@ -78,7 +78,7 @@ void random_search(double function(double x), int Left_limit, int Right_limit)
         {
             double N = Probability(P, q);
             dependents[i].push_back(floor(N));
-            result[i].push_back(Function2(function, N, Left_limit, Right_limit));
+            result[i].push_back(Function_1(function, N, Left_limit, Right_limit));
             q += 0.005;
         }
         P += 0.01;
@@ -95,7 +95,7 @@ int main()
     cout<<"Variant 9"<<endl<<"Function: f(x)=-0.5*cos(0.5*x)+1"<<string(3,' ')<< "interval: [-2.5,1.5]"<<endl<<endl;
     random_search(Function, Left_limit, Right_limit);
     cout<<endl;
-    cout<<"Function1: f(x)=Function(x)*sin(5x)"<<string(3,' ')<< "interval: [-2.5,1.5]"<<endl<<endl;
-    random_search(Function1, Left_limit, Right_limit);
+    cout<<"Function_Multi: f(x)=Function(x)*sin(5x)"<<string(3,' ')<< "interval: [-2.5,1.5]"<<endl<<endl;
+    random_search(Function_Multi, Left_limit, Right_limit);
 }
 
